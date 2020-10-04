@@ -1,22 +1,22 @@
 .card {
-    border: 1px solid black;
-    height: 200px;
-    background-size: cover;
-    border-radius: 5px;
+  border: 1px solid black;
+  height: 200px;
+  background-size: cover;
+  border-radius: 5px;
 }
 
 .card a {
-    color: black !important;
+  color: black !important;
 }
 
 .card a:hover {
-    background-color:rgba(0,0,0,0.3);
-    text-decoration: none;
-    border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 h5 {
-    color: white;
-    text-shadow: 1px 1px #000;
-    font-family: 'Secular One', sans-serif;
+  color: white;
+  text-shadow: 1px 1px #000;
+  font-family: 'Secular One', sans-serif;
 }

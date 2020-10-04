@@ -1,9 +1,9 @@
-import React from "react";
-import Input from "../Input/Input";
-import { IMovie } from "../../App";
-import MovieCard from "../MovieCard";
+import React from 'react';
+import Input from '../Input/Input';
+import { IMovie } from '../../App';
+import MovieCard from '../MovieCard';
 
-import "./Home.css";
+import './Home.css';
 
 interface IProps {
   movies: IMovie[] | null;
@@ -13,11 +13,18 @@ interface IProps {
   findMovie: (value: string) => void;
 }
 
-const Home: React.FC<IProps> = ({ movies, pages, currentPage, loading, findMovie }) => {
-
+const Home: React.FC<IProps> = ({
+  movies,
+  pages,
+  currentPage,
+  loading,
+  findMovie,
+}) => {
   return (
     <div className="container mt-5">
-      <h1 data-testid="home_title" className="text-center">Find movie</h1>
+      <h1 data-testid="home_title" className="text-center">
+        Find movie
+      </h1>
       <Input findMovie={findMovie} />
       <div className="row m-0 justify-content-between">
         {movies &&
@@ -29,7 +36,7 @@ const Home: React.FC<IProps> = ({ movies, pages, currentPage, loading, findMovie
               imdbID={movie.imdbID}
             />
           ))}
-          {loading && <h1>Loading more movies...</h1>}
+        {loading && <h1>Loading more movies...</h1>}
       </div>
     </div>
   );

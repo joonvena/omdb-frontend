@@ -1,0 +1,6 @@
+build/*
+node_modules/*
+coverage
+src/serviceWorker.ts
+src/setupTests.ts
+src/react-app-env.d.ts

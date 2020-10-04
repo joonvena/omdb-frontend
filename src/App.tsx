@@ -1,11 +1,11 @@
-import React from "react";
-import { Route, Switch, useRouteMatch } from "react-router-dom";
+import React from 'react';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
-import MovieDetails from "./components/MovieDetails";
-import Home from "./components/Home/Home";
-import infinityScoller from "./utils/infinityScroller";
+import MovieDetails from './components/MovieDetails';
+import Home from './components/Home/Home';
+import infinityScoller from './utils/infinityScroller';
 
-const API_KEY = process.env.REACT_APP_API_KEY || "";
+const API_KEY = process.env.REACT_APP_API_KEY || '';
 
 export interface IMovie {
   Title: string;
@@ -22,14 +22,15 @@ interface IUserData {
 const App: React.FC = () => {
   const [movies, setMovies] = React.useState<IMovie[] | null>(null);
   const [pages, setPages] = React.useState(0);
-  const [searchTerm, setSearchTerm] = React.useState("");
+  const [searchTerm, setSearchTerm] = React.useState('');
   const [currentPage, setCurrentPage] = React.useState(1);
+
   const [loading, setLoading] = React.useState(false);
   const [userData, setUserData] = React.useState<IUserData | null>(null);
 
   const isBottom = infinityScoller();
 
-  const match = useRouteMatch<{ id: string }>("/movies/:id");
+  const match = useRouteMatch<{ id: string }>('/movies/:id');
   const movie = match
     ? movies && movies.find((movie) => movie.imdbID === String(match.params.id))
     : null;
@@ -41,10 +42,10 @@ const App: React.FC = () => {
   }, [isBottom]);
 
   React.useEffect(() => {
-    const userData = localStorage.getItem("movie_data");
+    const userData = localStorage.getItem('movie_data');
     if (!userData) {
       const data: IUserData = { favorites: [] };
-      localStorage.setItem("movie_data", JSON.stringify(data));
+      localStorage.setItem('movie_data', JSON.stringify(data));
       setUserData(data);
     } else {
       setUserData(JSON.parse(userData));

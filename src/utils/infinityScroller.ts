@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React from "react";
+import React from 'react';
 
 const infinityScoller = () => {
   const [bottom, setBottom] = React.useState(false);
@@ -7,19 +7,17 @@ const infinityScoller = () => {
   React.useEffect(() => {
     function handleScroll() {
       const isBottom =
-        window.innerHeight + window.pageYOffset >=
-        document.body.offsetHeight;
-        console.log(isBottom)
+        window.innerHeight + window.pageYOffset >= document.body.offsetHeight;
+      console.log(isBottom);
       setBottom(isBottom);
     }
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return bottom;
-
 };
 
 export default infinityScoller;
