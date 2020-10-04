@@ -1,0 +1,20 @@
+.search {
+    background-color: transparent;
+    border: 0;
+    font-size: 32px;
+    color: white !important;
+    border-bottom: 1px solid #CCC !important;
+    border-radius: 0;  
+}
+
+.search::placeholder {
+    color: rgb(235, 235, 235);
+}
+
+.search:focus {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    box-shadow:none;
+    border-bottom: 1px solid white !important;
+}
